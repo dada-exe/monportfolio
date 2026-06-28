@@ -92,6 +92,15 @@ export class App {
         { name: 'Spline',  icon: '', img: 'https://spline.design/_next/static/media/spline-app-icon-v2.fdc35245.png' },
       ],
     },
+    {
+      category: 'Méthode Agile',
+      techs: [
+        { name: 'Atlassian',    icon: '', img: 'https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon-32x32.png' },
+        { name: 'Trello',       icon: 'devicon-trello-plain colored',     img: '' },
+        { name: 'Slack',        icon: 'devicon-slack-plain colored',      img: '' },
+        { name: 'OpenProject',  icon: '', img: 'https://www.openproject.org/favicon.ico' },
+      ],
+    },
   ];
 
   techIcons: Record<string, string> = {

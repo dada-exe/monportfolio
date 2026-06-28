@@ -1,49 +1,52 @@
-<!-- Navigation -->
-<nav class="nav" [class.nav--solid]="activeSection() !== 'hero'">
-  <div class="nav__inner">
-    <a class="nav__logo" (click)="scrollTo('hero')">BD</a>
-    <ul class="nav__links">
-      @for (link of navLinks; track link.id) {
-      <li>
-        <button class="nav__link" [class.nav__link--active]="activeSection() === link.id" (click)="scrollTo(link.id)">
-          {{ link.label }}
-        </button>
-      </li>
-      }
-    </ul>
-    <button class="nav__burger" (click)="toggleMenu()" aria-label="Menu">
-      <span [class.open]="menuOpen()"></span>
-    </button>
+<!-- Header + Hero fusionnés -->
+<header id="hero" class="header">
+
+  <!-- Logo stencil en arrière-plan -->
+  <div class="header__bg-logo" aria-hidden="true">
+    <img src="logo/bd_stencil_logo_transparent.png" alt="" />
   </div>
-  @if (menuOpen()) {
-  <div class="nav__mobile">
-    @for (link of navLinks; track link.id) {
-    <button class="nav__mobile-link" (click)="scrollTo(link.id)">{{ link.label }}</button>
+
+  <!-- Nav intégrée -->
+  <div class="header__nav">
+    <div class="wrap header__nav-inner">
+      <ul class="header__links">
+        @for (link of navLinks; track link.id) {
+        <li>
+          <button class="header__link" [class.header__link--active]="activeSection() === link.id"
+            (click)="scrollTo(link.id)">
+            {{ link.label }}
+          </button>
+        </li>
+        }
+      </ul>
+      <button class="header__burger" (click)="toggleMenu()" aria-label="Menu">
+        <span [class.open]="menuOpen()"></span>
+      </button>
+    </div>
+    @if (menuOpen()) {
+    <div class="header__mobile">
+      @for (link of navLinks; track link.id) {
+      <button class="header__mobile-link" (click)="scrollTo(link.id)">{{ link.label }}</button>
+      }
+    </div>
     }
   </div>
-  }
-</nav>
 
-<!-- Hero -->
-<section id="hero" class="hero">
-  <div class="wrap hero__wrap">
-    <div class="hero__content">
-      <p class="hero__eyebrow">Étudiant Master Data Science & IoT</p>
-      <h1 class="hero__name">Badara Diallo</h1>
-      <p class="hero__bio">
-        Licencié en Génie Logiciel, je me spécialise en intelligence artificielle
-        et systèmes IoT. Je construis des solutions où les données rencontrent les objets connectés.
-      </p>
-      <div class="hero__actions">
-        <button class="btn btn--primary" (click)="scrollTo('projects')">Voir mes projets</button>
-        <button class="btn btn--ghost" (click)="scrollTo('contact')">Me contacter</button>
-      </div>
-    </div>
-    <div class="hero__photo">
-      <img src="img/IMG_3531.jpeg" alt="Badara Diallo" />
+  <!-- Contenu hero -->
+  <div class="wrap header__content">e aussi le bouton
+    <p class="hero__eyebrow">Étudiant Master Data Science & IoT</p>
+    <h1 class="hero__name">Badara Diallo</h1>
+    <p class="hero__bio">
+      Licencié en Génie Logiciel, je me spécialise en intelligence artificielle
+      et systèmes IoT. Je construis des solutions où les données rencontrent les objets connectés.
+    </p>
+    <div class="hero__actions">
+      <button class="btn btn--primary" (click)="scrollTo('projects')">Voir mes projets</button>
+      <button class="btn btn--ghost hero__btn-ghost" (click)="scrollTo('contact')">Me contacter</button>
     </div>
   </div>
-</section>
+
+</header>
 
 <!-- About -->
 <section id="about" class="section">
@@ -88,25 +91,22 @@
 
     <div class="tabs">
       @for (group of skillGroups; track group.category; let i = $index) {
-        <button
-          class="tab"
-          [class.tab--active]="activeSkillTab() === i"
-          (click)="activeSkillTab.set(i)">
-          {{ group.category }}
-        </button>
+      <button class="tab" [class.tab--active]="activeSkillTab() === i" (click)="activeSkillTab.set(i)">
+        {{ group.category }}
+      </button>
       }
     </div>
 
     <div class="tech-grid">
       @for (tech of skillGroups[activeSkillTab()].techs; track tech.name) {
-        <div class="tech-card">
-          @if (tech.icon) {
-            <i [class]="tech.icon"></i>
-          } @else if (tech.img) {
-            <img [src]="tech.img" [alt]="tech.name" class="tech-card__img" />
-          }
-          <span>{{ tech.name }}</span>
-        </div>
+      <div class="tech-card">
+        @if (tech.icon) {
+        <i [class]="tech.icon"></i>
+        } @else if (tech.img) {
+        <img [src]="tech.img" [alt]="tech.name" class="tech-card__img" />
+        }
+        <span>{{ tech.name }}</span>
+      </div>
       }
     </div>
   </div>
