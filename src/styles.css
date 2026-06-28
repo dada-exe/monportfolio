@@ -395,32 +395,76 @@ h4 {
 }
 
 /* ── Skills ── */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-.skill-block__cat {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--g3);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--g6);
-  font-family: "Inter", sans-serif;
+  padding-bottom: 0;
 }
-.skill-block__list {
-  list-style: none;
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: .625rem 1rem;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--g3);
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.tab:hover { color: var(--black); }
+.tab--active {
+  color: var(--black);
+  border-bottom-color: var(--black);
+  font-weight: 600;
+}
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.tech-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: .5rem;
+  padding: 1rem .875rem;
+  background: var(--white);
+  border: 1px solid var(--g6);
+  border-radius: 10px;
+  width: 88px;
+  cursor: default;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  will-change: transform;
 }
-.skill-block__list li {
-  font-size: 0.875rem;
+.tech-card:hover {
+  transform: perspective(600px) rotateX(8deg) rotateY(-6deg) translateY(-4px);
+  box-shadow: 6px 10px 24px rgba(0,0,0,.1), 0 2px 6px rgba(0,0,0,.06);
+  border-color: var(--g5);
+}
+.tech-card i {
+  font-size: 2rem;
+  line-height: 1;
+  display: block;
+}
+.tech-card__img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  display: block;
+}
+.tech-card span {
+  font-size: .65rem;
+  font-weight: 500;
   color: var(--g2);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  line-height: 1.3;
 }
 
 /* ── Projects ── */

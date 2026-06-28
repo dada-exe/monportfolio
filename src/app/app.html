@@ -85,16 +85,28 @@
   <div class="wrap">
     <div class="section__label">Compétences</div>
     <h2 class="section__title">Ce que je maîtrise</h2>
-    <div class="skills">
-      @for (skill of skills; track skill.category) {
-      <div class="skill-block">
-        <h3 class="skill-block__cat">{{ skill.category }}</h3>
-        <ul class="skill-block__list">
-          @for (item of skill.items; track item) {
-          <li>{{ item }}</li>
+
+    <div class="tabs">
+      @for (group of skillGroups; track group.category; let i = $index) {
+        <button
+          class="tab"
+          [class.tab--active]="activeSkillTab() === i"
+          (click)="activeSkillTab.set(i)">
+          {{ group.category }}
+        </button>
+      }
+    </div>
+
+    <div class="tech-grid">
+      @for (tech of skillGroups[activeSkillTab()].techs; track tech.name) {
+        <div class="tech-card">
+          @if (tech.icon) {
+            <i [class]="tech.icon"></i>
+          } @else if (tech.img) {
+            <img [src]="tech.img" [alt]="tech.name" class="tech-card__img" />
           }
-        </ul>
-      </div>
+          <span>{{ tech.name }}</span>
+        </div>
       }
     </div>
   </div>
