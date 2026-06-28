@@ -1,0 +1,222 @@
+<!-- Navigation -->
+<nav class="nav" [class.nav--solid]="activeSection() !== 'hero'">
+  <div class="nav__inner">
+    <a class="nav__logo" (click)="scrollTo('hero')">BD</a>
+    <ul class="nav__links">
+      @for (link of navLinks; track link.id) {
+      <li>
+        <button class="nav__link" [class.nav__link--active]="activeSection() === link.id" (click)="scrollTo(link.id)">
+          {{ link.label }}
+        </button>
+      </li>
+      }
+    </ul>
+    <button class="nav__burger" (click)="toggleMenu()" aria-label="Menu">
+      <span [class.open]="menuOpen()"></span>
+    </button>
+  </div>
+  @if (menuOpen()) {
+  <div class="nav__mobile">
+    @for (link of navLinks; track link.id) {
+    <button class="nav__mobile-link" (click)="scrollTo(link.id)">{{ link.label }}</button>
+    }
+  </div>
+  }
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+  <div class="wrap hero__wrap">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Étudiant Master Data Science & IoT</p>
+      <h1 class="hero__name">Badara Diallo</h1>
+      <p class="hero__bio">
+        Licencié en Génie Logiciel, je me spécialise en intelligence artificielle
+        et systèmes IoT. Je construis des solutions où les données rencontrent les objets connectés.
+      </p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" (click)="scrollTo('projects')">Voir mes projets</button>
+        <button class="btn btn--ghost" (click)="scrollTo('contact')">Me contacter</button>
+      </div>
+    </div>
+    <div class="hero__photo">
+      <img src="img/IMG_3531.jpeg" alt="Badara Diallo" />
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="section__label">À propos</div>
+    <div class="about">
+      <div class="about__text">
+        <h2 class="about__title">Construire à l'intersection des données et du monde physique.</h2>
+        <p>
+          Je m'intéresse aux systèmes qui collectent, analysent et agissent sur des données en temps réel.
+          Mon parcours en génie logiciel me donne une base solide pour concevoir des architectures robustes,
+          tandis que mon Master me pousse vers l'intelligence artificielle et l'IoT.
+        </p>
+        <p>
+          Rigoureux, curieux et orienté résultats — je cherche à contribuer à des projets concrets
+          où la technologie crée une vraie valeur.
+        </p>
+      </div>
+      <div class="about__edu">
+        <h3 class="about__edu-title">Formation</h3>
+        @for (edu of education; track edu.degree) {
+        <div class="edu-item">
+          <div class="edu-item__meta">
+            <span class="edu-item__period">{{ edu.period }}</span>
+          </div>
+          <div class="edu-item__body">
+            <strong>{{ edu.degree }}</strong>
+            <p>{{ edu.description }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section section--gray">
+  <div class="wrap">
+    <div class="section__label">Compétences</div>
+    <h2 class="section__title">Ce que je maîtrise</h2>
+    <div class="skills">
+      @for (skill of skills; track skill.category) {
+      <div class="skill-block">
+        <h3 class="skill-block__cat">{{ skill.category }}</h3>
+        <ul class="skill-block__list">
+          @for (item of skill.items; track item) {
+          <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="section__label">Projets</div>
+    <h2 class="section__title">Expériences & Projets</h2>
+
+    <div class="projects__group-label">Projets réalisés</div>
+    <div class="projects">
+      @for (project of projects; track project.title; let i = $index) {
+      @if (project.status === 'réalisé') {
+      <div class="project">
+        <div class="project__number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="project__body">
+          <div class="project__header">
+            <h3 class="project__title">{{ project.title }}</h3>
+            <span class="project__role">{{ project.role }}</span>
+          </div>
+          <p class="project__desc">{{ project.description }}</p>
+          <div class="project__tags">
+            @for (tag of project.tags; track tag) {
+            <span class="tag">
+              @if (techIcons[tag]) {
+              <i [class]="techIcons[tag]"></i>
+              } @else if (techImgs[tag]) {
+              <img [src]="techImgs[tag]" [alt]="tag" class="tag__img" />
+              } @else if (techBadges[tag]) {
+              <span class="tag__badge" [style.background]="techBadges[tag].bg" [style.color]="techBadges[tag].color">{{
+                techBadges[tag].label }}</span>
+              }
+              {{ tag }}
+            </span>
+            }
+          </div>
+        </div>
+      </div>
+      }
+      }
+    </div>
+
+    <div class="projects__group-label projects__group-label--ongoing">Projets en cours</div>
+    <div class="projects">
+      @for (project of projects; track project.title; let i = $index) {
+      @if (project.status === 'en cours') {
+      <div class="project project--ongoing">
+        <div class="project__number">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="project__body">
+          <div class="project__header">
+            <h3 class="project__title">{{ project.title }}</h3>
+            <span class="project__badge">En cours</span>
+          </div>
+          <p class="project__desc">{{ project.description }}</p>
+          <div class="project__tags">
+            @for (tag of project.tags; track tag) {
+            <span class="tag">
+              @if (techIcons[tag]) {
+              <i [class]="techIcons[tag]"></i>
+              } @else if (techImgs[tag]) {
+              <img [src]="techImgs[tag]" [alt]="tag" class="tag__img" />
+              } @else if (techBadges[tag]) {
+              <span class="tag__badge" [style.background]="techBadges[tag].bg" [style.color]="techBadges[tag].color">{{
+                techBadges[tag].label }}</span>
+              }
+              {{ tag }}
+            </span>
+            }
+          </div>
+        </div>
+      </div>
+      }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section--gray">
+  <div class="wrap">
+    <div class="section__label">Contact</div>
+    <div class="contact">
+      <div class="contact__left">
+        <h2 class="contact__title">Travaillons ensemble.</h2>
+        <p class="contact__text">
+          Disponible pour des stages, alternances ou projets collaboratifs.
+          N'hésitez pas à me contacter.
+        </p>
+      </div>
+      <div class="contact__links">
+        <a href="mailto:aliounediallo676@gmail.com" class="contact__link">
+          <span class="contact__link-label">Email</span>
+          <span class="contact__link-value">aliounediallo676&#64;gmail.com</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="contact__link">
+          <span class="contact__link-label">GitHub</span>
+          <span class="contact__link-value">github.com/badara-diallo</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact__link">
+          <span class="contact__link-label">LinkedIn</span>
+          <span class="contact__link-value">linkedin.com/in/badara-diallo</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7v10" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <span>Badara Diallo - {{ currentYear }}</span>
+    <span>Master Data Science & IoT</span>
+  </div>
+</footer>
