@@ -164,6 +164,8 @@ h4 {
   color: #fff;
   background: #9a9a96;
 }
+/* Active link state */
+
 .header__link--active {
   color: #fff;
   font-weight: 600;
