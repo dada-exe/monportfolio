@@ -21,84 +21,131 @@ export class App {
     {
       category: 'Data Science & IA',
       techs: [
-        { name: 'Python',       icon: 'devicon-python-plain colored',           img: '' },
-        { name: 'TensorFlow',   icon: 'devicon-tensorflow-original colored',    img: '' },
-        { name: 'Scikit-learn', icon: 'devicon-scikitlearn-plain colored',      img: '' },
-        { name: 'Pandas',       icon: 'devicon-pandas-plain colored',           img: '' },
-        { name: 'Jupyter',      icon: 'devicon-jupyter-plain colored',          img: '' },
-        { name: 'FastAPI',      icon: 'devicon-fastapi-plain colored',          img: '' },
-        { name: 'Django',       icon: 'devicon-django-plain colored',           img: '' },
-        { name: 'Kaggle',       icon: 'devicon-kaggle-original colored',        img: '' },
-        { name: 'HuggingFace',  icon: '',                                       img: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg' },
+        { name: 'Python', icon: 'devicon-python-plain colored', img: '' },
+        {
+          name: 'TensorFlow',
+          icon: 'devicon-tensorflow-original colored',
+          img: '',
+        },
+        {
+          name: 'Scikit-learn',
+          icon: 'devicon-scikitlearn-plain colored',
+          img: '',
+        },
+        { name: 'Pandas', icon: 'devicon-pandas-plain colored', img: '' },
+        { name: 'Jupyter', icon: 'devicon-jupyter-plain colored', img: '' },
+        { name: 'FastAPI', icon: 'devicon-fastapi-plain colored', img: '' },
+        { name: 'Django', icon: 'devicon-django-plain colored', img: '' },
+        { name: 'Kaggle', icon: 'devicon-kaggle-original colored', img: '' },
+        {
+          name: 'HuggingFace',
+          icon: '',
+          img: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg',
+        },
       ],
     },
     {
       category: 'Mobile & Frontend',
       techs: [
-        { name: 'Angular',      icon: '', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg' },
-        { name: 'Next.js',      icon: 'devicon-nextjs-plain',              img: '' },
-        { name: 'React Native', icon: 'devicon-react-plain colored',       img: '' },
-        { name: 'Flutter',      icon: 'devicon-flutter-plain colored',     img: '' },
-        { name: 'Electron',     icon: 'devicon-electron-original colored', img: '' },
-        { name: 'TypeScript',   icon: 'devicon-typescript-plain colored',  img: '' },
+        {
+          name: 'Angular',
+          icon: '',
+          img: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg',
+        },
+        { name: 'Next.js', icon: 'devicon-nextjs-plain', img: '' },
+        { name: 'React Native', icon: 'devicon-react-plain colored', img: '' },
+        { name: 'Flutter', icon: 'devicon-flutter-plain colored', img: '' },
+        {
+          name: 'Electron',
+          icon: 'devicon-electron-original colored',
+          img: '',
+        },
+        {
+          name: 'TypeScript',
+          icon: 'devicon-typescript-plain colored',
+          img: '',
+        },
       ],
     },
     {
       category: 'Backend & API',
       techs: [
-        { name: 'NestJS',      icon: 'devicon-nestjs-plain colored',  img: '' },
-        { name: 'Spring Boot', icon: 'devicon-spring-plain colored',  img: '' },
-        { name: 'Laravel',     icon: 'devicon-laravel-plain colored', img: '' },
-        { name: 'Docker',      icon: 'devicon-docker-plain colored',  img: '' },
-        { name: 'Git',         icon: 'devicon-git-plain colored',     img: '' },
+        { name: 'NestJS', icon: 'devicon-nestjs-plain colored', img: '' },
+        { name: 'Spring Boot', icon: 'devicon-spring-plain colored', img: '' },
+        { name: 'Laravel', icon: 'devicon-laravel-plain colored', img: '' },
+        { name: 'Docker', icon: 'devicon-docker-plain colored', img: '' },
+        { name: 'Git', icon: 'devicon-git-plain colored', img: '' },
       ],
     },
     {
       category: 'Bases de données & Cloud',
       techs: [
-        { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored', img: '' },
-        { name: 'MySQL',      icon: 'devicon-mysql-plain colored',      img: '' },
-        { name: 'MongoDB',    icon: 'devicon-mongodb-plain colored',    img: '' },
-        { name: 'Supabase',   icon: 'devicon-supabase-plain colored',   img: '' },
-        { name: 'Firebase',   icon: 'devicon-firebase-plain colored',   img: '' },
-        { name: 'Prisma',     icon: 'devicon-prisma-plain colored',     img: '' },
+        {
+          name: 'PostgreSQL',
+          icon: 'devicon-postgresql-plain colored',
+          img: '',
+        },
+        { name: 'MySQL', icon: 'devicon-mysql-plain colored', img: '' },
+        { name: 'MongoDB', icon: 'devicon-mongodb-plain colored', img: '' },
+        { name: 'Supabase', icon: 'devicon-supabase-plain colored', img: '' },
+        { name: 'Firebase', icon: 'devicon-firebase-plain colored', img: '' },
+        { name: 'Prisma', icon: 'devicon-prisma-plain colored', img: '' },
       ],
     },
     {
       category: 'IoT & Embarqué',
       techs: [
-        { name: 'Arduino',      icon: 'devicon-arduino-plain colored',      img: '' },
-        { name: 'Grafana',      icon: 'devicon-grafana-plain colored',      img: '' },
-        { name: 'Raspberry Pi', icon: 'devicon-raspberrypi-plain colored',  img: '' },
+        { name: 'Arduino', icon: 'devicon-arduino-plain colored', img: '' },
+        { name: 'Grafana', icon: 'devicon-grafana-plain colored', img: '' },
+        {
+          name: 'Raspberry Pi',
+          icon: 'devicon-raspberrypi-plain colored',
+          img: '',
+        },
       ],
     },
     {
       category: 'Création Contenu IA',
       techs: [
         { name: 'Higgsfield', icon: '', img: 'https://higgsfield.ai/icon.png' },
-        { name: 'Remotion',   icon: '', img: 'https://remotion.dev/img/logo-small.png' },
+        {
+          name: 'Remotion',
+          icon: '',
+          img: 'https://remotion.dev/img/logo-small.png',
+        },
       ],
     },
     {
       category: 'Automatisation',
-      techs: [
-        { name: 'n8n', icon: '', img: 'https://n8n.io/favicon.ico' },
-      ],
+      techs: [{ name: 'n8n', icon: '', img: 'https://n8n.io/favicon.ico' }],
     },
     {
       category: '3D & Design',
       techs: [
         { name: 'Blender', icon: 'devicon-blender-original colored', img: '' },
-        { name: 'Spline',  icon: '', img: 'https://spline.design/_next/static/media/spline-app-icon-v2.fdc35245.png' },
+        //{ name: 'Spline',  icon: '', img: 'https://spline.design/_next/static/media/spline-app-icon-v2.fdc35245.png' },
+        {
+          name: 'Spline',
+          icon: '',
+          img: 'https://spline.design/images/icon_favicon32x32.png',
+        },
       ],
     },
     {
       category: 'Méthode Agile',
       techs: [
-        { name: 'Atlassian',    icon: '', img: 'https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon-32x32.png' },
-        { name: 'Trello',       icon: 'devicon-trello-plain colored',     img: '' },
-        { name: 'Slack',        icon: 'devicon-slack-plain colored',      img: '' },
-        { name: 'OpenProject',  icon: '', img: 'https://www.openproject.org/favicon.ico' },
+        {
+          name: 'Atlassian',
+          icon: '',
+          img: 'https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon-32x32.png',
+        },
+        { name: 'Trello', icon: 'devicon-trello-plain colored', img: '' },
+        { name: 'Slack', icon: 'devicon-slack-plain colored', img: '' },
+        {
+          name: 'OpenProject',
+          icon: '',
+          img: 'https://www.openproject.org/favicon.ico',
+        },
       ],
     },
   ];
@@ -216,13 +263,14 @@ export class App {
       status: 'en cours',
       role: 'Développeur fullstack',
     },
-    // Ajouter un projet sira
+    // Ajout du projet  sira
     {
-      title:'Application de GEstion Automobilière denommée SIRA',
-      description:'Application mobile pour la gestion des sécurités routières avec intégration d\'une carte Maps et d\'un système de suivi en temps reel ',
-      tags:['React Native','PostgreSQL'],
-      status:'en cours',
-      role:'Développeur mobile'
+      title: 'Application de Gestion Sécuritaire pour la route  denommée SIRA',
+      description:
+        "Application mobile pour la gestion des sécurités routières avec intégration d'une carte Maps et d'un système de suivi en temps reel ",
+      tags: ['React Native', 'PostgreSQL'],
+      status: 'en cours',
+      role: 'Développeur mobile',
     },
   ];
 
