@@ -216,6 +216,14 @@ export class App {
       status: 'en cours',
       role: 'Développeur fullstack',
     },
+    // Ajouter un projet sira
+    {
+      title:'Application de GEstion Automobilière denommée SIRA',
+      description:'Application mobile pour la gestion des sécurités routières avec intégration d\'une carte Maps et d\'un système de suivi en temps reel ',
+      tags:['React Native','PostgreSQL'],
+      status:'en cours',
+      role:'Développeur mobile'
+    },
   ];
 
   education = [
